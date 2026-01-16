@@ -21,7 +21,7 @@ Antes de ejecutar el proyecto debes tener instalado lo necesario para proyectos 
 ```bash
         npm start
 ```
-    - Este comando iniciará el proyecto
+- Este comando iniciará el proyecto
 
 # Datos extra
 - Autor: Fernando Octavio Arroyo Velasco
