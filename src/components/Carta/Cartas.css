@@ -1,0 +1,63 @@
+.contenedor-Estilo {
+  display: flex; /* Sin comillas */
+  flex-wrap: wrap; /* En CSS es flex-wrap, no flexWrap */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* En CSS es justify-content */
+}
+
+.card-Estilo {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3498db; /* background-color */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.elevada_num1 {
+  background-color:green;
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.elevada_num2 {
+  background-color:red;
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.carta {
+  width: 60px;
+  height: 80px;
+  background: lightblue;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: transform 0.5s ease;
+}
+
+.card-Estilo {
+  transition: transform 0.6s ease;
+}
+
+.elevada {
+  transform: translateY(-40px);
+  
+}
+
+.swap-left {
+  transform: translate(-40px, -40px);
+}
+
+.swap-right {
+  transform: translate(40px, -40px);
+}
