@@ -1,4 +1,4 @@
-import { iconos,IconName } from "../assets/constants/iconos";
+import { iconos} from "../assets/constants/iconos";
 export const Navbar = () => {
 
   const imaLogo = iconos.Logo;

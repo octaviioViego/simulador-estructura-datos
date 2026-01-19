@@ -1,58 +1,83 @@
 import { useEffect, useState } from 'react';
-import {Cartas} from './Carta/Cartas';
-import {Paso} from '../assets/types/paso.types';
+import { Cartas } from './Carta/Cartas';
+import { CartasProps } from '../assets/types/cartasProps.types';
 
-interface CartasProps {
-  pasos: Paso[]; // Estamos diciendo: "Recibiré un arreglo de números"
-  inicial: number[];
+export interface CajaCallBackProps {
+  onFinish?: () => void;
 }
 
-export function Simulador({pasos,inicial} : CartasProps) {
-  
-  const [lista, setLista] = useState([...inicial]);
-  
+export function Simulador({
+  pasos,
+  inicial,
+  onFinish,
+}: CartasProps & CajaCallBackProps) {
+
+  const [lista, setLista] = useState<number[]>([]);
   const [pasoActual, setPasoActual] = useState(0);
   const [reproduciendo, setReproduciendo] = useState(false);
+  const [finalizado, setFinalizado] = useState(false);
 
   const paso = pasos[pasoActual];
 
-  //Unica responsabilidad decir que ya paso el 700ms para el siguiente paso
+  /* 1. RESET TOTAL cuando cambian pasos o lista inicial */
+  useEffect(() => {
+  
+    setLista([...inicial]);
+    setPasoActual(0);
+    setReproduciendo(false);
+    setFinalizado(false);
+
+    const timer = setTimeout(() => {
+      setReproduciendo(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [pasos, inicial]);
+
+  /* 2. Avanzar pasos */
   useEffect(() => {
     if (!reproduciendo) return;
 
-    //Cada 700 ms avanzamos al siguiente paso.
-    const intervalo = setInterval(() => {
-      setPasoActual(p => p + 1); // Cambia el valor del paso. 
+    const timer = setTimeout(() => {
+      setPasoActual(p => p + 1);
     }, 700);
 
-    return () => clearInterval(intervalo); // Limpieza entre intervalos
-  }, [reproduciendo]);
+    return () => clearTimeout(timer);
+  }, [reproduciendo, pasoActual]);
 
-  //Logica de movieminto de las cartas
+  /* 3. Ejecutar lógica del paso */
   useEffect(() => {
     if (!paso) {
       setReproduciendo(false);
+      setFinalizado(true);
       return;
     }
 
-    // Si el paso actual dice que hay intercambio, lo ejecutamos. Cuando los pasos cambiaron 
-    //autonaticamente se acciona
-  if (paso.intercambio) {
-    setLista(prev => {
-      const copia = [...prev];
-      [copia[paso.i], copia[paso.j]] = [copia[paso.j], copia[paso.i]];
-      return copia;
-    });
-  }
-  // Si no hay intercambio, setLista NO se llama, 
-  // pero los num_1 y num_2 siguen iluminando las cartas porque pasoActual cambió.
-}, [pasoActual]);
+    if (paso.intercambio) {
+      setLista(prev => {
+        const copia = [...prev];
+        [copia[paso.i], copia[paso.j]] = [copia[paso.j], copia[paso.i]];
+        return copia;
+      });
+    }
+  }, [paso]);
 
+  /* 4. Avisar al padre */
+  useEffect(() => {
+    if (!finalizado) return;
 
-    return (
-        <div>
-            <Cartas lista={lista} num_1={paso?.i ?? -1} num_2={paso?.j ?? -1} /> 
-             <button onClick={() => setReproduciendo(true)}>Play</button>
-        </div>
-    );
+    const timer = setTimeout(() => {
+      onFinish?.();
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, [finalizado, onFinish]);
+
+  return (
+    <Cartas
+      lista={lista}
+      num_1={paso?.i ?? -1}
+      num_2={paso?.j ?? -1}
+    />
+  );
 }

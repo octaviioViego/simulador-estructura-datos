@@ -1,17 +1,18 @@
 import '../App.css';
 import { Simulador } from './Simulador';
-import  type {Paso} from "../assets/types/paso.types";
-import {IconName,iconos} from "../assets/constants/iconos";
-
-interface CartasProps {
-  inicial: number[];
-  pasos: Paso[];
-  nombreAlgoritmo: string;
-  nombreIcono: IconName;
+import {iconos} from "../assets/constants/iconos";
+import {CajaProps} from "../assets/types/cajaProps.types";
+import { useCallback } from 'react';
+export interface CajaCallBackProps {
+  onFinish?: () => void;
 }
 
-export function Caja ({pasos,inicial,nombreAlgoritmo,nombreIcono}: CartasProps) {
-    
+export function Caja ({pasos,inicial,nombreAlgoritmo,nombreIcono, onFinish}: CajaProps & CajaCallBackProps) {
+  
+  const handleFinish = useCallback(() => {
+    onFinish?.();
+  }, [onFinish]);
+
     //const nombre = nombreIcono as keyof typeof iconos;
     const iconoSeleccionado = iconos[nombreIcono];
     
@@ -22,8 +23,9 @@ export function Caja ({pasos,inicial,nombreAlgoritmo,nombreIcono}: CartasProps) 
             <h1>{nombreAlgoritmo}</h1>
             <img src={iconoSeleccionado} alt="test" className="na-logo" />
         </div>
-       <Simulador inicial={inicial} pasos={pasos}/> 
-        {/* <Animacion />  */}
+
+       <Simulador inicial={inicial} pasos={pasos}  onFinish={handleFinish}/>
+
     </div>
   );
 }

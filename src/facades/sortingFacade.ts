@@ -1,17 +1,5 @@
 import {burbujaNormal,burbujaMejorado} from "../algorithms/sorting";
-
-import {Paso} from "../assets/types/paso.types";
-import {IconName} from "../assets/constants/iconos";
-
-
-
-export type CajaProps = {
-  inicial: number[];
-  pasos: Paso[];
-  nombreAlgoritmo: string;
-  nombreIcono: IconName;
-};
-
+import {CajaProps} from "../assets/types/cajaProps.types";
 
 export class SortingFacade{
     
