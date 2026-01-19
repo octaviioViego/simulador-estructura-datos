@@ -68,7 +68,7 @@ export function Simulador({
 
     const timer = setTimeout(() => {
       onFinish?.();
-    }, 4000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [finalizado, onFinish]);
