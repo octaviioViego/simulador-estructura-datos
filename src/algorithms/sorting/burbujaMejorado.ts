@@ -7,9 +7,10 @@ export function burbujaMejorado(listaOrigen: number[]): Paso[]{
     const lista = [...listaOrigen];
     let contador : number =  0;
     
-    while(contador < lista.length && movimientos){
+    while(contador < lista.length -1  && movimientos){
+        movimientos = false;
         for(let j=0; j < (lista.length-contador -1); j++){
-            movimientos = false;
+            
             pasos.push({ i: j, j: j + 1, intercambio: false});
             
             if (lista[j] > lista[j + 1]) {

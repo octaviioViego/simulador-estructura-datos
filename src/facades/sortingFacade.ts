@@ -1,4 +1,4 @@
-import {burbujaNormal,burbujaMejorado} from "../algorithms/sorting";
+import {burbujaNormal,burbujaMejorado,burbujaBidireccional} from "../algorithms/sorting";
 import {CajaProps} from "../assets/types/cajaProps.types";
 
 export class SortingFacade{
@@ -26,5 +26,15 @@ export class SortingFacade{
 
   }
 
+  ordenarBurbujaBidireccional(lista: number[]): CajaProps {
+   
+    return {
+        inicial: lista,
+        pasos: burbujaBidireccional(lista),
+        nombreAlgoritmo: "Burbuja bidireccional",
+        nombreIcono: "BurbujaMejorado"
+      };
+
+  }
 
 }

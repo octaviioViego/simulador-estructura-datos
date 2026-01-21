@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
 import { listaRandom } from "../algorithms/listings/randomList";
 import { Caja } from './Caja';
-import { SortingFacade } from '../facades/sortingFacade';
 import {randomAlgorithmFacade} from "../facades/randomAlgorithmFacede";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -12,7 +11,6 @@ export const Animacion = () => {
   const [idSimulacion, setIdSimulacion] = useState(0);
 
   const cajaProps = useMemo(
-    
     () => randomAlgorithmFacade(lista),
     [lista]
   );

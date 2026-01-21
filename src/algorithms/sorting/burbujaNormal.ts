@@ -1,13 +1,9 @@
-type Paso = {
-  i: number;
-  j: number;
-  intercambio: boolean;
-};
-
+import {Paso} from "../../assets/types/paso.types";
 
 export function burbujaNormal(listaOrigen: number[]): Paso[]{
     const pasos: Paso [] = []; 
     const lista = [...listaOrigen];
+
     for(let i=0; i < lista.length; i++){
         for(let j=0; j < (lista.length-i -1); j++){
             pasos.push({ i: j, j: j + 1, intercambio: false});
@@ -20,5 +16,6 @@ export function burbujaNormal(listaOrigen: number[]): Paso[]{
           } 
         }    
     }
+    
     return pasos;
 }

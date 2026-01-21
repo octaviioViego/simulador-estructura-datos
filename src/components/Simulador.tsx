@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Cartas } from './Carta/Cartas';
 import { CartasProps } from '../assets/types/cartasProps.types';
+import {OnFinishCallback} from '../assets/types/callbacks/simulacion.callbacks';
 
-export interface CajaCallBackProps {
-  onFinish?: () => void;
-}
-
-export function Simulador({
-  pasos,
-  inicial,
-  onFinish,
-}: CartasProps & CajaCallBackProps) {
+export function Simulador({pasos,inicial,onFinish}: CartasProps & OnFinishCallback) {
 
   const [lista, setLista] = useState<number[]>([]);
   const [pasoActual, setPasoActual] = useState(0);
@@ -40,10 +33,11 @@ export function Simulador({
 
     const timer = setTimeout(() => {
       setPasoActual(p => p + 1);
-    }, 700);
+    }, 700); //700 ms
 
     return () => clearTimeout(timer);
   }, [reproduciendo, pasoActual]);
+
 
   /* 3. Ejecutar lógica del paso */
   useEffect(() => {
@@ -74,10 +68,8 @@ export function Simulador({
   }, [finalizado, onFinish]);
 
   return (
-    <Cartas
-      lista={lista}
-      num_1={paso?.i ?? -1}
-      num_2={paso?.j ?? -1}
-    />
+
+    <Cartas lista={lista} num_1={paso?.i ?? -1} num_2={paso?.j ?? -1}/>
+  
   );
 }

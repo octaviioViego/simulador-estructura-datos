@@ -3,17 +3,14 @@ import { Simulador } from './Simulador';
 import {iconos} from "../assets/constants/iconos";
 import {CajaProps} from "../assets/types/cajaProps.types";
 import { useCallback } from 'react';
-export interface CajaCallBackProps {
-  onFinish?: () => void;
-}
+import {OnFinishCallback} from '../assets/types/callbacks/simulacion.callbacks';
 
-export function Caja ({pasos,inicial,nombreAlgoritmo,nombreIcono, onFinish}: CajaProps & CajaCallBackProps) {
+export function Caja ({pasos,inicial,nombreAlgoritmo,nombreIcono, onFinish}: CajaProps & OnFinishCallback) {
   
   const handleFinish = useCallback(() => {
     onFinish?.();
   }, [onFinish]);
 
-    //const nombre = nombreIcono as keyof typeof iconos;
     const iconoSeleccionado = iconos[nombreIcono];
     
     return (
