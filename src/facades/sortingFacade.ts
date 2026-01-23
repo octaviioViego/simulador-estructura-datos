@@ -1,6 +1,7 @@
 import {
   burbujaNormal,burbujaMejorado,burbujaBidireccional,
   seleccion,inserccion,
+  shell,
 
 } from "../algorithms/sorting";
 import {CajaProps} from "../assets/types/cajaProps.types";
@@ -59,4 +60,12 @@ export class SortingFacade{
       };
   }
   
+  ordenarShell(lista: number[]): CajaProps {
+      return {
+        inicial: lista,
+        pasos: shell(lista),
+        nombreAlgoritmo: "Ordenamiento Shell (Saltos GAP.)",
+        nombreIcono: "OrdenamientoShell"
+      };
+  }
 }

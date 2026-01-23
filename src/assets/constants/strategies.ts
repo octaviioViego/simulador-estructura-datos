@@ -9,4 +9,5 @@ export const strategies: Array<(lista: number[]) => CajaProps> = [
   facade.ordenarBurbujaBidireccional.bind(facade),
   facade.ordenarSeleccion.bind(facade),
   facade.ordenarInserccion.bind(facade),
+  facade.ordenarShell.bind(facade),
 ];

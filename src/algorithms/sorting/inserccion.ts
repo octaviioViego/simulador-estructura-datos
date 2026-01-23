@@ -1,7 +1,7 @@
 import {Paso} from "../../assets/types/paso.types";
 
 export function inserccion(listaOrigen:number[]):Paso[]{
-    const pasos: Paso [] = []
+    const pasos: Paso [] = [];
     const lista: number[] = [...listaOrigen];
     
     for(let i=1;i<listaOrigen.length;i++){
