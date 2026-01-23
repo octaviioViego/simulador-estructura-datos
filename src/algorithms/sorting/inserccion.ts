@@ -1,0 +1,39 @@
+import {Paso} from "../../assets/types/paso.types";
+
+export function inserccion(listaOrigen:number[]):Paso[]{
+    const pasos: Paso [] = []
+    const lista: number[] = [...listaOrigen];
+    
+    for(let i=1;i<listaOrigen.length;i++){
+        let valorActual:number = lista[i];
+        let posicion:number = i;
+        let posicionado:boolean = true        
+        
+        //Paso 1 levando la carta Uno 
+        pasos.push({ i: posicion, j: posicion, intercambio: false});
+
+
+        while(posicion>0 && posicionado){
+
+            posicionado = false; 
+
+            if(lista[posicion-1]>lista[posicion]){
+                
+                pasos.push({ i: posicion-1, j: posicion, intercambio: true});
+
+                posicionado = true;
+                
+                lista[posicion] = lista[posicion-1];
+                lista[posicion-1]= valorActual;
+                
+                posicion--;
+            }
+            
+
+        }
+         
+    }
+
+    return pasos;
+
+}

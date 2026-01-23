@@ -1,4 +1,8 @@
-import {burbujaNormal,burbujaMejorado,burbujaBidireccional} from "../algorithms/sorting";
+import {
+  burbujaNormal,burbujaMejorado,burbujaBidireccional,
+  seleccion,inserccion,
+
+} from "../algorithms/sorting";
 import {CajaProps} from "../assets/types/cajaProps.types";
 
 export class SortingFacade{
@@ -32,9 +36,27 @@ export class SortingFacade{
         inicial: lista,
         pasos: burbujaBidireccional(lista),
         nombreAlgoritmo: "Burbuja bidireccional",
-        nombreIcono: "BurbujaMejorado"
+        nombreIcono: "BurbujaBidireccional"
       };
 
   }
 
+  ordenarSeleccion(lista: number[]): CajaProps {
+      return {
+        inicial: lista,
+        pasos: seleccion(lista),
+        nombreAlgoritmo: "Ordenamiento de selección",
+        nombreIcono: "OrdenamientoSeleccion"
+      };
+  }
+  
+  ordenarInserccion(lista: number[]): CajaProps {
+      return {
+        inicial: lista,
+        pasos: inserccion(lista),
+        nombreAlgoritmo: "Ordenamiento de insercción",
+        nombreIcono: "OrdenamientoInsertar"
+      };
+  }
+  
 }
