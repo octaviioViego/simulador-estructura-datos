@@ -1,0 +1,124 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* Logo a la izquierda, GitHub a la derecha */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a1a1a;
+    color: white;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente imagen y texto */
+    gap: 12px;
+    /* Espacio entre el dibujo y las letras */
+    flex-grow: 1;
+}
+
+.navbar-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    /* Esto la hace circular */
+    object-fit: cover;
+    /* Esto evita que tu cara se vea estirada */
+    border: 2px solid #61dafb;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-text span {
+    color: #61dafb;
+    /* El color clásico de React/JS */
+}
+
+.actions {
+    display: flex;
+    flex-grow: 5;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+/**************************/
+
+.menu-item {
+    position: relative;
+    /* referencia para el submenu */
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.menu-item:hover {
+    background-color: #f3f4f6;
+}
+
+.arrow {
+    float: right;
+    font-size: 12px;
+}
+
+
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* se va a la derecha */
+    margin-left: 1px;
+
+    display: none;
+    /* oculto por defecto */
+    flex-direction: column;
+    gap: 6px;
+
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 8px;
+    min-width: 160px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.has-submenu:hover .submenu {
+    display: flex;
+}
+
+.github-button {
+    background-color: transparent;
+    color: #e5e7eb;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.github-button:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.github-button img {
+    width: 25px;
+    height: 25px;
+}

@@ -1,27 +1,29 @@
 import './App.css';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
+import { Navbar } from './components/Nevbar/Navbar';
+import { Hero } from './components/Hero/Hero';
 import { Footer } from './components/Footer';
-import { Animacion } from './components/Animacion';
+import { useState } from 'react';
+import { HeroProps } from './components/Hero/HeroProps.types';
 
 export function App() {
+  const [heroType, setHeroType] = useState<HeroProps["type"]>("inicio");
 
 
-return (
-    
-     <div className="app">
-       <Navbar />
-      
-       <main className='main'>
-        
-        <Hero /> 
-          <Animacion/>       
-       </main>
-       
-       <Footer />
-     
-     </div>
-     
+  return (
+
+    <div className="app">
+      <Navbar onSelect={setHeroType} />
+
+      <main className='main'>
+
+        <Hero type={heroType} />
+
+      </main>
+
+      <Footer />
+
+    </div>
+
   );
 }
 

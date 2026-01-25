@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   color-scheme: light dark;
   font-family: system-ui;
   height: 97.5%;
@@ -17,49 +18,21 @@ html, body {
 
 /* Esto afecta al contenedor que definimos arriba */
 .contenido-principal {
-  padding: 10px; /* Aquí es donde controlas el espacio */
-  max-width: 1200px; /* Para que no se estire demasiado en pantallas grandes */
-  margin: 0 auto;    /* Centra todo el contenido */
-  
+  padding: 10px;
+  /* Aquí es donde controlas el espacio */
+  max-width: 1200px;
+  /* Para que no se estire demasiado en pantallas grandes */
+  margin: 0 auto;
+  /* Centra todo el contenido */
+
   display: flex;
   flex-direction: column;
-  gap: 50px;         /* Crea espacio automático entre Hero y Simulador */
+  gap: 50px;
+  /* Crea espacio automático entre Hero y Simulador */
   flex: 1;
   width: 100%;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Logo a la izquierda, GitHub a la derecha */
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1a1a1a;
-  color: white;
-  width: 100%;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center; /* Centra verticalmente imagen y texto */
-  gap: 12px;          /* Espacio entre el dibujo y las letras */
-}
-
-.navbar-logo {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%; /* Esto la hace circular */
-  object-fit: cover;  /* Esto evita que tu cara se vea estirada */
-  border: 2px solid #61dafb;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.logo-text span {
-  color: #61dafb;      /* El color clásico de React/JS */
-}
 
 .app {
   min-height: 100vh;
@@ -74,35 +47,46 @@ html, body {
 }
 
 .simulador-container {
-  margin-top: 50px;       /* baja el simulador */
+  margin-top: 50px;
+  /* baja el simulador */
   display: flex;
-  justify-content: center; /* centra horizontal */
+  justify-content: center;
+  /* centra horizontal */
 }
 
 .descripcion {
-  text-indent: 2rem;     /* espacio en blanco al inicio (sangría) */
-  line-height: 1.8;      /* altura de línea (mejor lectura) */
+  text-indent: 2rem;
+  /* espacio en blanco al inicio (sangría) */
+  line-height: 1.8;
+  /* altura de línea (mejor lectura) */
   max-width: 800px;
 }
 
 
 .caja {
-  display: flex;             /* Activa el modo flexible */
-  flex-direction: column;    /* Coloca los elementos en vertical (Título arriba, Animación abajo) */
-  align-items: center;       /* Centra horizontalmente los elementos */
-  justify-content: center;   /* Centra verticalmente (si la caja tiene una altura definida) */
-  text-align: center;        /* Asegura que el texto dentro del h1 esté centrado */
-  
+  display: flex;
+  /* Activa el modo flexible */
+  flex-direction: column;
+  /* Coloca los elementos en vertical (Título arriba, Animación abajo) */
+  align-items: center;
+  /* Centra horizontalmente los elementos */
+  justify-content: center;
+  /* Centra verticalmente (si la caja tiene una altura definida) */
+  text-align: center;
+  /* Asegura que el texto dentro del h1 esté centrado */
+
   /* Opcional: Estilos para que parezca una "caja" de simulador */
   border: 2px solid #333;
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 800px;          /* Para que no ocupe toda la pantalla */
+  max-width: 800px;
+  /* Para que no ocupe toda la pantalla */
 }
 
 .caja h1 {
-  margin-bottom: 20px;       /* Separa el título de la animación */
+  margin-bottom: 20px;
+  /* Separa el título de la animación */
   font-family: sans-serif;
 }
 
@@ -110,18 +94,20 @@ html, body {
   width: 65px;
   height: 65px;
   /* border-radius: 50%; /* Esto la hace circular */
-  object-fit: cover;  /* Esto evita que tu cara se vea estirada */
-  
+  object-fit: cover;
+  /* Esto evita que tu cara se vea estirada */
+
   /* border: 2px solid #61dafb; */
-  
+
 }
 
 
-.caja > div {
+.caja>div {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Centra el h1 y la imagen entre ellos */
+  align-items: center;
+  /* Centra el h1 y la imagen entre ellos */
   margin-bottom: 10px;
-  gap: 12px; 
-  
+  gap: 12px;
+
 }
