@@ -4,16 +4,17 @@ import { iconos } from "../../assets/constants/iconos";
 import { DropdownProps } from "./DropdownProps.types";
 
 
-const Dropdown = ({ label, children }: DropdownProps) => {
+const Dropdown = ({ label, children, nombreIcono, className }: DropdownProps) => {
     const [open, setOpen] = useState(false);
+    const iconoSeleccionado = iconos[nombreIcono];
 
     return (
         <div className="dropdown">
             <button
-                className="dropdown-button"
+                className={className || "dropdown-button"}
                 onClick={() => setOpen(!open)}
             >
-                <img src={iconos.Menu} alt="test" />
+                <img src={iconoSeleccionado} alt="test" />
                 {label}
 
             </button>

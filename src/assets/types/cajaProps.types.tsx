@@ -1,10 +1,11 @@
-import {Paso} from "./paso.types";
-import {IconName} from "../constants/iconos";
+import { Paso } from "./paso.types";
+import { IconName } from "../constants/iconos";
 
 
 export type CajaProps = {
-  inicial: number[];
+  lista: number[];
   pasos: Paso[];
   nombreAlgoritmo: string;
   nombreIcono: IconName;
+  empezar?: boolean;
 };

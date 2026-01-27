@@ -1,5 +1,5 @@
 import { iconos } from "../../assets/constants/iconos";
-import { HeroProps } from "../Hero/HeroProps.types";
+import { HeroProps } from "../Hero/heroProps.types";
 import Dropdown from "../Dropdown/Dropdown";
 import "./Navbar.css";
 
@@ -7,8 +7,7 @@ export const Navbar = ({ onSelect }: { onSelect: (type: HeroProps["type"]) => vo
 
   const imaLogo = iconos.Logo;
   const imaGithub = iconos.Github;
-  const imaAlgoritmos = iconos.Algoritmos;
-  const imaEstructuraDatos = iconos.EstructuraDatos;
+  const imaMenu = "Menu";
 
   return (
     <nav className="navbar">
@@ -21,7 +20,7 @@ export const Navbar = ({ onSelect }: { onSelect: (type: HeroProps["type"]) => vo
       </div>
 
       <div className="actions">
-        <Dropdown label="Menú">
+        <Dropdown label="Menú" nombreIcono={imaMenu}>
           <div className="menu-item has-submenu">
             Algoritmos
             <span className="arrow">▶</span>

@@ -1,37 +1,40 @@
-import {Paso} from "../../assets/types/paso.types";
+import { Paso } from "../../assets/types/paso.types";
 
-export function inserccion(listaOrigen:number[]):Paso[]{
-    const pasos: Paso [] = [];
+export function inserccion(listaOrigen: number[]): Paso[] {
+    const pasos: Paso[] = [];
     const lista: number[] = [...listaOrigen];
-    
-    for(let i=1;i<listaOrigen.length;i++){
-        let valorActual:number = lista[i];
-        let posicion:number = i;
-        let posicionado:boolean = true        
-        
+
+    for (let i = 1; i < listaOrigen.length; i++) {
+        let valorActual: number = lista[i];
+        let posicion: number = i;
+        let posicionado: boolean = true
+
+        //El primer paso es para que empiece el simulador (TODAS las cartas abajo.)
+        pasos.push({ i: -1, j: -1, intercambio: false });
+
         //Paso 1 levando la carta Uno 
-        pasos.push({ i: posicion, j: posicion, intercambio: false});
+        pasos.push({ i: posicion, j: posicion, intercambio: false });
 
 
-        while(posicion>0 && posicionado){
+        while (posicion > 0 && posicionado) {
 
-            posicionado = false; 
+            posicionado = false;
 
-            if(lista[posicion-1]>lista[posicion]){
-                
-                pasos.push({ i: posicion-1, j: posicion, intercambio: true});
+            if (lista[posicion - 1] > lista[posicion]) {
+
+                pasos.push({ i: posicion - 1, j: posicion, intercambio: true });
 
                 posicionado = true;
-                
-                lista[posicion] = lista[posicion-1];
-                lista[posicion-1]= valorActual;
-                
+
+                lista[posicion] = lista[posicion - 1];
+                lista[posicion - 1] = valorActual;
+
                 posicion--;
             }
-            
+
 
         }
-         
+
     }
 
     return pasos;

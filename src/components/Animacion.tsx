@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { listaRandom } from "../algorithms/listings/randomList";
 import { Caja } from './Caja';
-import {randomAlgorithmFacade} from "../facades/randomAlgorithmFacede";
+import { randomAlgorithmFacade } from "../facades/randomAlgorithmFacede";
 import { motion, AnimatePresence } from 'framer-motion';
 
 
@@ -37,4 +37,5 @@ export const Animacion = () => {
       </AnimatePresence>
     </div>
   );
+
 };

@@ -3,7 +3,7 @@ import { Navbar } from './components/Nevbar/Navbar';
 import { Hero } from './components/Hero/Hero';
 import { Footer } from './components/Footer';
 import { useState } from 'react';
-import { HeroProps } from './components/Hero/HeroProps.types';
+import { HeroProps } from './components/Hero/heroProps.types';
 
 export function App() {
   const [heroType, setHeroType] = useState<HeroProps["type"]>("inicio");

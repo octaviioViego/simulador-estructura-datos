@@ -78,3 +78,43 @@
     width: 25px;
     height: 25px;
 }
+
+/* Segunda opcion de dropdown */
+.ordenamiento-dropdown {
+    background-color: transparent;
+    color: #111827;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+}
+
+.ordenamiento-dropdown img {
+    width: 25px;
+    height: 25px;
+}
+
+
+/* BOTÓN ACTIVO CUANDO EL MENÚ ESTÁ ABIERTO */
+.ordenamiento-dropdown:hover {
+    background-color: #60a5fa;
+    color: #111827;
+
+}
+
+/* BOTÓN ACTIVO CUANDO EL MENÚ ESTÁ ABIERTO */
+.dropdown:hover .ordenamiento-dropdown {
+    background-color: #60a5fa;
+    color: #111827;
+
+}

@@ -1,0 +1,47 @@
+.contenedor-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contenedor-botones button {
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    margin: 5px;
+    color: white;
+}
+
+
+.contenedor-botones button:hover {
+    background-color: #0056b3;
+}
+
+.contenedor-botones button:active {
+    transform: scale(0.95);
+}
+
+.boton-activo {
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.caja {
+    /* Opcional: Estilos para que parezca una "caja" de simulador */
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    /* Para que no ocupe toda la pantalla */
+}
+
+.boton-deshabilitado {
+    background-color: #9ca3af;
+    color: #6b7280;
+    opacity: 0.6;
+    cursor: not-allowed;
+}

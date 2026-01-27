@@ -1,7 +1,6 @@
 import { Animacion } from "../Animacion";
-import { Ordenamiento } from "../Ordenamiento/Ordenamiento";
-import { HeroProps } from "./HeroProps.types";
-
+import { HeroProps } from "./heroProps.types";
+import { Ordenamiento } from "../../features/Ordenamiento/Ordenamiento";
 
 export const Hero = ({ type }: HeroProps) => {
 

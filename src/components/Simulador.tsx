@@ -1,31 +1,37 @@
 import { useEffect, useState } from 'react';
 import { Cartas } from './Carta/Cartas';
 import { CartasProps } from '../assets/types/cartasProps.types';
-import {OnFinishCallback} from '../assets/types/callbacks/simulacion.callbacks';
+import { OnFinishCallback } from '../assets/types/callbacks/simulacion.callbacks';
 
-export function Simulador({pasos,inicial,onFinish}: CartasProps & OnFinishCallback) {
+export function Simulador({ pasos, lista, onFinish, empezar }: CartasProps & OnFinishCallback) {
 
-  const [lista, setLista] = useState<number[]>([]);
+  const [listaCopia, setListaCopia] = useState<number[]>([]);
   const [pasoActual, setPasoActual] = useState(0);
   const [reproduciendo, setReproduciendo] = useState(false);
   const [finalizado, setFinalizado] = useState(false);
 
+
   const paso = pasos[pasoActual];
 
-  /* 1. RESET TOTAL cuando cambian pasos o lista inicial */
   useEffect(() => {
-  
-    setLista([...inicial]);
-    setPasoActual(0);
-    setReproduciendo(false);
-    setFinalizado(false);
+    if (!empezar) return;
 
     const timer = setTimeout(() => {
       setReproduciendo(true);
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [pasos, inicial]);
+  }, [empezar, pasos, lista]);
+
+
+  /* 1. RESET TOTAL cuando cambian pasos o lista inicial */
+  useEffect(() => {
+
+    setListaCopia([...lista]);
+    setPasoActual(0);
+    setReproduciendo(false);
+    setFinalizado(false);
+  }, [pasos, lista]);
 
   /* 2. Avanzar pasos */
   useEffect(() => {
@@ -48,7 +54,7 @@ export function Simulador({pasos,inicial,onFinish}: CartasProps & OnFinishCallba
     }
 
     if (paso.intercambio) {
-      setLista(prev => {
+      setListaCopia(prev => {
         const copia = [...prev];
         [copia[paso.i], copia[paso.j]] = [copia[paso.j], copia[paso.i]];
         return copia;
@@ -69,7 +75,7 @@ export function Simulador({pasos,inicial,onFinish}: CartasProps & OnFinishCallba
 
   return (
 
-    <Cartas lista={lista} num_1={paso?.i ?? -1} num_2={paso?.j ?? -1}/>
-  
+    <Cartas lista={listaCopia} num_1={paso?.i ?? -1} num_2={paso?.j ?? -1} />
+
   );
 }
