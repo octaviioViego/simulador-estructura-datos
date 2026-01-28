@@ -1,12 +1,20 @@
+import { IconName } from "../../assets/constants/iconos";
 import { useState } from "react";
 import "./Dropdown.css";
 import { iconos } from "../../assets/constants/iconos";
-import { DropdownProps } from "./DropdownProps.types";
+
+export interface DropdownProps {
+    label: string;
+    children: React.ReactNode;
+    nombreIcono?: IconName;
+    className?: string;
+}
 
 
 const Dropdown = ({ label, children, nombreIcono, className }: DropdownProps) => {
     const [open, setOpen] = useState(false);
-    const iconoSeleccionado = iconos[nombreIcono];
+    const iconoSeleccionado = nombreIcono ? iconos[nombreIcono] : "";
+
 
     return (
         <div className="dropdown">
@@ -14,7 +22,7 @@ const Dropdown = ({ label, children, nombreIcono, className }: DropdownProps) =>
                 className={className || "dropdown-button"}
                 onClick={() => setOpen(!open)}
             >
-                <img src={iconoSeleccionado} alt="test" draggable="false" />
+                {nombreIcono && <img src={iconoSeleccionado} alt={nombreIcono} />}
                 {label}
 
             </button>

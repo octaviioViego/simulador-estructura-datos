@@ -13,7 +13,7 @@ export const Navbar = ({ onSelect }: { onSelect: (type: HeroProps["type"]) => vo
     <nav className="navbar">
 
       <div className="logo-container logo">
-        <img src={imaLogo} alt="test" className="navbar-logo" />
+        <img src={imaLogo} alt="test" className="navbar-logo" draggable="false" />
         <div className="logo-text">
           Algoritmos Y <span>Estructuras</span>
         </div>
@@ -52,7 +52,7 @@ export const Navbar = ({ onSelect }: { onSelect: (type: HeroProps["type"]) => vo
         </Dropdown>
 
         <button className="github-button ">
-          <img src={imaGithub} alt="test" />
+          <img src={imaGithub} alt="test" draggable="false" />
           <a href="https://github.com/octaviioViego" target="_blank">Ir GitHub</a>
         </button>
       </div>

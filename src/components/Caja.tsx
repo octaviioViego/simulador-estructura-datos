@@ -16,9 +16,9 @@ export function Caja({ pasos, lista, nombreAlgoritmo, nombreIcono, onFinish, emp
   return (
     <div className="caja">
       <div>
-        <img src={iconoSeleccionado} alt="test" className="na-logo" />
+        <img src={iconoSeleccionado} alt="test" className="na-logo" draggable="false" />
         <h1>{nombreAlgoritmo}</h1>
-        <img src={iconoSeleccionado} alt="test" className="na-logo" />
+        <img src={iconoSeleccionado} alt="test" className="na-logo" draggable="false" />
       </div>
 
       <Simulador lista={lista} pasos={pasos} onFinish={handleFinish} empezar={empezar} />

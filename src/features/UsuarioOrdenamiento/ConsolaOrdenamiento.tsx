@@ -1,6 +1,6 @@
 import { opcionesSimuladorProps } from "./opcionSimulador.types";
 import "./ControllerOrdenamiento.css";
-import { useState } from "react";
+import Dropdown from "./DropdownOrdenamiento";
 
 export const ConsolaOrdenamiento = ({ onSelect, activar, activo, listaOrdenada, activarOrdenar }:
     {
@@ -13,6 +13,7 @@ export const ConsolaOrdenamiento = ({ onSelect, activar, activo, listaOrdenada, 
 
     return (
         <div className="contenedor-botones caja ">
+
             <button
                 className={(!listaOrdenada && activo) ? "boton-activo" : "boton-deshabilitado"}
                 onClick={() => {
@@ -41,9 +42,13 @@ export const ConsolaOrdenamiento = ({ onSelect, activar, activo, listaOrdenada, 
                     }
                 }}>Reiniciar ordenamiento</button>
 
-            <button
-                className={activo ? "boton-activo" : "boton-deshabilitado"}
-                onClick={() => onSelect("velocidad")}>Cambiar velocidad</button>
+            <Dropdown label="Cambiar velocidad" className="" >
+                <div className="dropdown-boton">
+                    <button>+ 10% (Aumentar velocidad)</button>
+                    <button>- 10% (Disminuir velocidad)</button>
+                </div>
+            </Dropdown>
+
         </div >
     );
 }

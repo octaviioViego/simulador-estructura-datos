@@ -2,21 +2,29 @@
   "name": "parcel-react-client-starter",
   "private": true,
   "version": "0.0.0",
+  "browserslist": [
+    "last 3 chrome versions"
+  ],
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./ --dist-dir dist",
+    "predeploy": "rm -rf dist .parcel-cache && npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "framer-motion": "^12.24.7",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "framer-motion": "^12.24.7"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "parcel": "^2.12.0",
-    "typescript": "^5.9.3",
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0"
-  }
+    "@types/react-dom": "^19.0.0",
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.12.0",
+    "typescript": "^5.9.3"
+  },
+  "homepage": "https://octaviioViego.github.io/simulado_estructuras"
 }
-
