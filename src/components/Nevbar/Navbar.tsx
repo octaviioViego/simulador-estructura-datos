@@ -12,8 +12,10 @@ export const Navbar = ({ onSelect }: { onSelect: (type: HeroProps["type"]) => vo
   return (
     <nav className="navbar">
 
-      <div className="logo-container logo">
-        <img src={imaLogo} alt="test" className="navbar-logo" draggable="false" />
+      <div className="logo-container ">
+        <div onClick={() => onSelect("menu")} className="logo" >
+          <img src={imaLogo} alt="test" className="navbar-logo" draggable="false" />
+        </div>
         <div className="logo-text">
           Algoritmos Y <span>Estructuras</span>
         </div>

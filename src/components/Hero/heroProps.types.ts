@@ -1,4 +1,4 @@
 export interface HeroProps {
-    type: "inicio" | "ordenamiento" | "busqueda";
+    type: "inicio" | "ordenamiento" | "busqueda" | "menu";
 }
 
