@@ -92,5 +92,4 @@ export const ControllerOrdenamiento = ({ type }: OrdenamientoProps) => {
                 activo={activo} listaOrdenada={listaOrdenada} activarOrdenar={setListaOrdenada} />
         </div>
     );
-
 }
