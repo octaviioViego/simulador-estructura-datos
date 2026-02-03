@@ -1,6 +1,6 @@
 import { IconName } from "../../assets/constants/iconos";
 import { useState } from "react";
-import "./Dropdown.css";
+import "./DropdownOrdenamiento.css";
 import { iconos } from "../../assets/constants/iconos";
 
 export interface DropdownProps {

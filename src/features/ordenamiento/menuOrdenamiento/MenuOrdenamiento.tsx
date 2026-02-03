@@ -1,6 +1,5 @@
-import "./Ordenamiento.css";
-import "./button.css";
-import { OrdenamientoProps } from "./ordenamiento.types";
+import "./MenuOrdenamiento.css";
+import { OrdenamientoProps } from "../ordenamientoPage/ordenamientoPage.types";
 
 
 export const MenuOrdenamiento = ({ onSelect }: { onSelect: (type: OrdenamientoProps["type"]) => void }) => {
@@ -12,10 +11,10 @@ export const MenuOrdenamiento = ({ onSelect }: { onSelect: (type: OrdenamientoPr
                     <button onClick={() => onSelect("introduccion")}>Introducción</button>
                     <button onClick={() => onSelect("burbuja")}>Bubble Sort</button>
                     <button onClick={() => onSelect("burbujaMejorado")}>Bubble Sort Mejorado</button>
+                    <button onClick={() => onSelect("bubbleBidireccional")}>Bubble bidireccional</button>
                     <button onClick={() => onSelect("seleccion")}>Selection Sort</button>
                     <button onClick={() => onSelect("insercion")}>Insertion Sort</button>
-                    <button onClick={() => onSelect("merge")}>Merge Sort</button>
-                    <button onClick={() => onSelect("quicksort")}>Quick Sort</button>
+                    <button onClick={() => onSelect("shell")}>Shell Sort</button>
                 </div>
             </div>
         </div>

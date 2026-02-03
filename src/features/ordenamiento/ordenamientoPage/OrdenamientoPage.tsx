@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { MenuOrdenamiento } from "./MenuOrdenamiento";
-import { iconos } from "../../assets/constants/iconos";
-import "./Ordenamiento.css";
-import { OrdenamientoProps } from "./ordenamiento.types";
-import { SeleccionOpciones } from "./SeleccionOpciones";
+import { MenuOrdenamiento } from "../menuOrdenamiento/MenuOrdenamiento";
+import { iconos } from "../../../assets/constants/iconos";
+import "./OrdenamientoPage.css";
+import { OrdenamientoProps } from "./ordenamientoPage.types";
+import { SeleccionOpciones } from "../selectedSection/SeleccionOpciones";
 
 /**
  *  Componente principal de Ordenamiento donde se encarga de renderizar el menu de opciones y el contenido

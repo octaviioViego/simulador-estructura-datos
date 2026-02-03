@@ -4,7 +4,7 @@ export interface OrdenamientoProps {
     | "burbujaMejorado"
     | "seleccion"
     | "insercion"
-    | "merge"
-    | "quicksort"
+    | "bubbleBidireccional"
+    | "shell"
     | "animacion";
 }

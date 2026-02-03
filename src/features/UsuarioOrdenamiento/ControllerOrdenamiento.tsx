@@ -4,7 +4,7 @@ import { ConsolaOrdenamiento } from "./ConsolaOrdenamiento";
 import { listaRandom } from "../../algorithms/listings/randomList";
 import { SortingFacade } from "../../facades/sortingFacade";
 import { Caja } from "../../components/Caja";
-import { OrdenamientoProps } from "../Ordenamiento/ordenamiento.types";
+import { OrdenamientoProps } from "../ordenamiento/ordenamientoPage/ordenamientoPage.types";
 
 /*
  * Componente principal de Ordenamiento donde se encarga de controlar el estado de la simulacion
@@ -38,6 +38,10 @@ export const ControllerOrdenamiento = ({ type }: OrdenamientoProps) => {
                     return facade.ordenarSeleccion(lista);
                 case "insercion":
                     return facade.ordenarInserccion(lista);
+                case "bubbleBidireccional":
+                    return facade.ordenarBurbujaBidireccional(lista);
+                case "shell":
+                    return facade.ordenarShell(lista);
             }
             return facade.ordenarBurbuja(lista);
         },

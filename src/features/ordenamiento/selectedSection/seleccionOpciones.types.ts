@@ -6,7 +6,7 @@ import { ReactElement } from "react";
  * @property component - Componente que se renderizara
  * @property animationId - Id de la animacion
  */
-export type opcionMenuItem = {
+export type OpcionMenuSeleccion = {
     component: ReactElement;
     animationId: number;
 };

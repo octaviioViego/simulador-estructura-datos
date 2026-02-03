@@ -1,4 +1,4 @@
-import { ControllerOrdenamiento } from "../UsuarioOrdenamiento/ControllerOrdenamiento";
+import { ControllerOrdenamiento } from "../../UsuarioOrdenamiento/ControllerOrdenamiento";
 export const OrdenamientoBurbujaMejorado = () => {
     return (
         <div>
