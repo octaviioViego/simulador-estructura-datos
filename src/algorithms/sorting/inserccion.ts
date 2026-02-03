@@ -10,10 +10,10 @@ export function inserccion(listaOrigen: number[]): Paso[] {
         let posicionado: boolean = true
 
         //El primer paso es para que empiece el simulador (TODAS las cartas abajo.)
-        pasos.push({ i: -1, j: -1, intercambio: false });
+        pasos.push({ i: -1, j: -1, intercambio: false, tipoPaso: "init" });
 
         //Paso 1 levando la carta Uno 
-        pasos.push({ i: posicion, j: posicion, intercambio: false });
+        pasos.push({ i: posicion, j: posicion, intercambio: false, tipoPaso: "compare" });
 
 
         while (posicion > 0 && posicionado) {
@@ -22,7 +22,7 @@ export function inserccion(listaOrigen: number[]): Paso[] {
 
             if (lista[posicion - 1] > lista[posicion]) {
 
-                pasos.push({ i: posicion - 1, j: posicion, intercambio: true });
+                pasos.push({ i: posicion - 1, j: posicion, intercambio: true, tipoPaso: "swap" });
 
                 posicionado = true;
 
@@ -30,6 +30,8 @@ export function inserccion(listaOrigen: number[]): Paso[] {
                 lista[posicion - 1] = valorActual;
 
                 posicion--;
+            } else {
+                pasos.push({ i: posicion - 1, j: posicion, intercambio: false, tipoPaso: "noSwap" });
             }
 
 
@@ -37,6 +39,7 @@ export function inserccion(listaOrigen: number[]): Paso[] {
 
     }
 
+    pasos.push({ i: -1, j: -1, intercambio: false, tipoPaso: "done" });
     return pasos;
 
 }

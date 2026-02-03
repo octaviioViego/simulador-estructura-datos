@@ -4,6 +4,7 @@ import { ConsolaOrdenamiento } from "./ConsolaOrdenamiento";
 import { listaRandom } from "../../algorithms/listings/randomList";
 import { SortingFacade } from "../../facades/sortingFacade";
 import { Caja } from "../../components/Caja";
+import { OrdenamientoProps } from "../Ordenamiento/ordenamiento.types";
 
 /*
  * Componente principal de Ordenamiento donde se encarga de controlar el estado de la simulacion
@@ -12,16 +13,13 @@ import { Caja } from "../../components/Caja";
  * 
  */
 
-export const ControllerOrdenamiento = () => {
+export const ControllerOrdenamiento = ({ type }: OrdenamientoProps) => {
 
     const [opcion, setOpcion] = useState<opcionesSimuladorProps["type"]>("array");
     const [listaInicial, setListaInicial] = useState(() => listaRandom(6));
     const [lista, setLista] = useState(listaInicial);
-
     const [empezar, setEmpezar] = useState(false);
-
     const [activo, setActivo] = useState(true);
-
     const [listaOrdenada, setListaOrdenada] = useState(false);
 
 
@@ -31,6 +29,16 @@ export const ControllerOrdenamiento = () => {
     const cajaProps = useMemo(
         () => {
             const facade = new SortingFacade();
+            switch (type) {
+                case "burbuja":
+                    return facade.ordenarBurbuja(lista);
+                case "burbujaMejorado":
+                    return facade.ordenarBurbujaMejorado(lista);
+                case "seleccion":
+                    return facade.ordenarSeleccion(lista);
+                case "insercion":
+                    return facade.ordenarInserccion(lista);
+            }
             return facade.ordenarBurbuja(lista);
         },
         [lista]

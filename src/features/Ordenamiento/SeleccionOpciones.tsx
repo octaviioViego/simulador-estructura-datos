@@ -4,6 +4,7 @@ import { IntroduccionOrdenamiento } from "./IntroduccionOrdenamieto";
 import { AnimatePresence, motion } from "framer-motion";
 import { OrdenamientoBurbuja } from "./OrdenamientoBurbuja";
 import { opcionMenuItem } from "./opcionMenuItem.types";
+import { OrdenamientoBurbujaMejorado } from "./OrdenamientoBurbujaMejorado";
 
 export const SeleccionOpciones = ({ type }: OrdenamientoProps) => {
 
@@ -22,6 +23,11 @@ export const SeleccionOpciones = ({ type }: OrdenamientoProps) => {
             component: <OrdenamientoBurbuja />,
             animationId: 2,
         },
+        burbujaMejorado: {
+            component: <OrdenamientoBurbujaMejorado />,
+            animationId: 3,
+        },
+
     };
 
     return (

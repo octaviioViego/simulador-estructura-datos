@@ -18,6 +18,7 @@ export function Ordenamiento() {
     return (
 
         <div>
+
             <div className="ordenamiento-container">
                 <img src={iconos.Algoritmos} alt="test" className="ordenamiento-img" draggable="false" />
                 <h1>Algoritmos de Ordenamiento</h1>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Cartas } from './Carta/Cartas';
 import { CartasProps } from '../assets/types/cartasProps.types';
 import { OnFinishCallback } from '../assets/types/callbacks/simulacion.callbacks';
+import { PasoOrdenamiento } from '../assets/types/paso.types';
 
 export function Simulador({ pasos, lista, onFinish, empezar }: CartasProps & OnFinishCallback) {
 
@@ -9,6 +10,7 @@ export function Simulador({ pasos, lista, onFinish, empezar }: CartasProps & OnF
   const [pasoActual, setPasoActual] = useState(0);
   const [reproduciendo, setReproduciendo] = useState(false);
   const [finalizado, setFinalizado] = useState(false);
+  const [textoPaso, setTextoPaso] = useState("");
 
 
   const paso = pasos[pasoActual];
@@ -53,6 +55,8 @@ export function Simulador({ pasos, lista, onFinish, empezar }: CartasProps & OnF
       return;
     }
 
+    setTextoPaso(paso.tipoPaso);
+
     if (paso.intercambio) {
       setListaCopia(prev => {
         const copia = [...prev];
@@ -60,6 +64,7 @@ export function Simulador({ pasos, lista, onFinish, empezar }: CartasProps & OnF
         return copia;
       });
     }
+
   }, [paso]);
 
   /* 4. Avisar al padre */
@@ -75,7 +80,10 @@ export function Simulador({ pasos, lista, onFinish, empezar }: CartasProps & OnF
 
   return (
 
-    <Cartas lista={listaCopia} num_1={paso?.i ?? -1} num_2={paso?.j ?? -1} />
 
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Cartas lista={listaCopia} num_1={paso?.i ?? -1} num_2={paso?.j ?? -1} />
+      <h3 style={{ marginTop: "1rem" }}>{PasoOrdenamiento[paso?.tipoPaso ?? "processing"]}</h3>
+    </div>
   );
 }

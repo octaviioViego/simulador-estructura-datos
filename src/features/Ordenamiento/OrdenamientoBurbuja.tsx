@@ -1,6 +1,5 @@
 import { ControllerOrdenamiento } from "../UsuarioOrdenamiento/ControllerOrdenamiento";
 export const OrdenamientoBurbuja = () => {
-
     return (
         <div>
             <h1>Ordenamiento Burbuja (Bubble Sort)</h1>
@@ -10,7 +9,7 @@ export const OrdenamientoBurbuja = () => {
                 Este proceso se repite hasta que el array esté ordenado.</p>
             <p>Simulador de ordenamiento burbuja</p>
             <div>
-                <ControllerOrdenamiento />
+                <ControllerOrdenamiento type="burbuja" />
             </div>
         </div>
     );
