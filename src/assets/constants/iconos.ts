@@ -10,6 +10,8 @@ export const iconos = {
   Menu: new URL('../image/Menu.png', import.meta.url).href,
   Algoritmos: new URL('../image/Algoritmo.png', import.meta.url).href,
   EstructuraDatos: new URL('../image/EstructuraDatos.png', import.meta.url).href,
+  Empezar: new URL('../image/Empezar.png', import.meta.url).href,
+  Reinicio: new URL('../image/Reinicio.png', import.meta.url).href,
 } as const;
 
 export type IconName = keyof typeof iconos;

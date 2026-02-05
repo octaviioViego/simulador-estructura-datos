@@ -1,6 +1,4 @@
 export interface opcionesSimuladorProps {
-    type: "array"
+    type: "reiniciar"
     | "ordenar"
-    | "reiniciar"
-    | "velocidad";
 }

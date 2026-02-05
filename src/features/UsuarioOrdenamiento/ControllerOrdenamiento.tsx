@@ -1,11 +1,10 @@
 import { useCallback, useMemo, useState } from "react";
 import { opcionesSimuladorProps } from "./opcionSimulador.types";
-import { ConsolaOrdenamiento } from "./ConsolaOrdenamiento";
 import { listaRandom } from "../../algorithms/listings/randomList";
 import { SortingFacade } from "../../facades/sortingFacade";
 import { Caja } from "../../components/Caja";
 import { OrdenamientoProps } from "../ordenamiento/ordenamientoPage/ordenamientoPage.types";
-
+import { BotonReinicio } from "./BotonReinicio";
 /*
  * Componente principal de Ordenamiento donde se encarga de controlar el estado de la simulacion
  * 
@@ -15,10 +14,13 @@ import { OrdenamientoProps } from "../ordenamiento/ordenamientoPage/ordenamiento
 
 export const ControllerOrdenamiento = ({ type }: OrdenamientoProps) => {
 
-    const [opcion, setOpcion] = useState<opcionesSimuladorProps["type"]>("array");
+    const [opcion, setOpcion] = useState<opcionesSimuladorProps["type"]>("reiniciar");
     const [listaInicial, setListaInicial] = useState(() => listaRandom(6));
     const [lista, setLista] = useState(listaInicial);
+
     const [empezar, setEmpezar] = useState(false);
+
+    //Activar o desactivar el boton de reinicio y empezar
     const [activo, setActivo] = useState(true);
     const [listaOrdenada, setListaOrdenada] = useState(false);
 
@@ -59,21 +61,17 @@ export const ControllerOrdenamiento = ({ type }: OrdenamientoProps) => {
     const manejarOpcion = useCallback(
         (opcion: opcionesSimuladorProps["type"]) => {
             switch (opcion) {
-                case "array":
+                case "reiniciar":
                     const nueva = listaRandom(6);
                     setListaInicial(nueva);
                     setLista(nueva);
-                    setEmpezar(false);
+                    setEmpezar(true);
                     break;
 
                 case "ordenar":
                     setEmpezar(true);
                     break;
 
-                case "reiniciar":
-                    setLista([...listaInicial]);
-                    setEmpezar(false);
-                    break;
             }
 
             setOpcion(opcion);
@@ -89,10 +87,7 @@ export const ControllerOrdenamiento = ({ type }: OrdenamientoProps) => {
     return (
         <div>
             <Caja {...cajaProps} empezar={empezar} onFinish={handleFinish} />
-            <h2>
-                Consola de Ordenamiento
-            </h2>
-            <ConsolaOrdenamiento onSelect={manejarOpcion} activar={setActivo}
+            <BotonReinicio onSelect={manejarOpcion} activar={setActivo}
                 activo={activo} listaOrdenada={listaOrdenada} activarOrdenar={setListaOrdenada} />
         </div>
     );
