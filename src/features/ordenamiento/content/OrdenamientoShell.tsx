@@ -1,4 +1,4 @@
-import { ControllerOrdenamiento } from "../../UsuarioOrdenamiento/ControllerOrdenamiento";
+import { ControllerOrdenamiento } from "../../boton-reinicio/OrdenamientoContainer";
 export const OrdenamientoShell = () => {
     return (
         <div>

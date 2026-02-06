@@ -1,8 +1,8 @@
 .contenedor-principal {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 120px;
+    gap: 10px;
+    margin-bottom: 5px;
 }
 
 .contenedor-imagen {
@@ -11,8 +11,8 @@
 }
 
 .contenedor-imagen img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px
 }
 
 .contenedor-texto {
@@ -32,4 +32,8 @@
     color: #6b7280;
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.contenedor-imagen:active {
+    transform: scale(0.9);
 }
