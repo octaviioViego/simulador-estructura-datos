@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { listaRandom } from "../../algorithms/listings/randomList";
+import { listaRandom } from "../../../algorithms/listings/randomList";
 
 export function useSimuladorOrdenamiento(){
     const [lista, setLista] = useState(() => listaRandom(6));

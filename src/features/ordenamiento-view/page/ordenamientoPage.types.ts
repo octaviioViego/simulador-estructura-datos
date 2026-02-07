@@ -1,5 +1,5 @@
-export interface OrdenamientoProps {
-    type: "introduccion"
+type TipoOrdenamiento = 
+    | "introduccion"
     | "burbuja"
     | "burbujaMejorado"
     | "seleccion"
@@ -7,4 +7,7 @@ export interface OrdenamientoProps {
     | "bubbleBidireccional"
     | "shell"
     | "animacion";
+
+export interface OrdenamientoProps {
+    type: TipoOrdenamiento;
 }

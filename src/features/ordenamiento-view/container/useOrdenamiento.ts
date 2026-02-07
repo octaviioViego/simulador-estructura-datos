@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { SortingFacade } from "../../facades/sortingFacade";
+import { SortingFacade } from "../../../facades/sortingFacade";
 
 export function useOrdenamiento(lista: number[], type: string) {
     const facade = useMemo(() => new SortingFacade(), []);

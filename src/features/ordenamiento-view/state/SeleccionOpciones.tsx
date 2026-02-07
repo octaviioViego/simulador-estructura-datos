@@ -1,14 +1,14 @@
 import { Animacion } from "../../../components/Animacion";
-import { OrdenamientoProps } from "../ordenamientoPage/ordenamientoPage.types";
-import { IntroduccionOrdenamiento } from "../content/IntroduccionOrdenamieto";
+import { OrdenamientoProps } from "../page/ordenamientoPage.types";
+import { IntroduccionOrdenamiento } from "../sections/IntroduccionOrdenamieto";
 import { AnimatePresence, motion } from "framer-motion";
-import { OrdenamientoBurbuja } from "../content/OrdenamientoBurbuja";
+import { OrdenamientoBurbuja } from "../sections/OrdenamientoBurbuja";
 import { OpcionMenuSeleccion } from "./seleccionOpciones.types";
-import { OrdenamientoBurbujaMejorado } from "../content/OrdenamientoBurbujaMejorado";
-import { OrdenamientoSeccion } from "../content/OrdenamientoSeccion";
-import { OrdenamientoInserccion } from "../content/OrdenamientoInserccio";
-import { OrdenamientoBurbujaBidireccional } from "../content/OrdenamientoBurbujaBidireccional";
-import { OrdenamientoShell } from "../content/OrdenamientoShell";
+import { OrdenamientoBurbujaMejorado } from "../sections/OrdenamientoBurbujaMejorado";
+import { OrdenamientoSeccion } from "../sections/OrdenamientoSeccion";
+import { OrdenamientoInserccion } from "../sections/OrdenamientoInserccio";
+import { OrdenamientoBurbujaBidireccional } from "../sections/OrdenamientoBurbujaBidireccional";
+import { OrdenamientoShell } from "../sections/OrdenamientoShell";
 
 export const SeleccionOpciones = ({ type }: OrdenamientoProps) => {
 

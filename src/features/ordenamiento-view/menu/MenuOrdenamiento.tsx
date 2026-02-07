@@ -1,5 +1,5 @@
 import "./MenuOrdenamiento.css";
-import { OrdenamientoProps } from "../ordenamientoPage/ordenamientoPage.types";
+import { OrdenamientoProps } from "../page/ordenamientoPage.types";
 
 
 export const MenuOrdenamiento = ({ onSelect }: { onSelect: (type: OrdenamientoProps["type"]) => void }) => {

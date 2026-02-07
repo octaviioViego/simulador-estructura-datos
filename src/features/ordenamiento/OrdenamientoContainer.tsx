@@ -1,7 +1,7 @@
 import { Caja } from "../../components/Caja";
-import { OrdenamientoProps } from "../ordenamiento/ordenamientoPage/ordenamientoPage.types";
-import { BotonReinicio } from "./BotonReinicio";
-import { useBotonReinicio } from "./useBotonReinicio";
+import { OrdenamientoProps } from "../ordenamiento-view/page/ordenamientoPage.types";
+import { BotonReinicio } from "../boton-reinicio/BotonReinicio";
+import { useBotonReinicio } from "../boton-reinicio/useBotonReinicio";
 import { useOrdenamiento } from "./useOrdenamiento";
 import { useSimuladorOrdenamiento } from "./useSimuladorOrdenamiento";
 

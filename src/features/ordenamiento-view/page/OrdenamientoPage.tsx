@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { MenuOrdenamiento } from "../menuOrdenamiento/MenuOrdenamiento";
+import { MenuOrdenamiento } from "../menu/MenuOrdenamiento";
 import { iconos } from "../../../assets/constants/iconos";
 import "./OrdenamientoPage.css";
 import { OrdenamientoProps } from "./ordenamientoPage.types";
-import { SeleccionOpciones } from "../selectedSection/SeleccionOpciones";
+import { SeleccionOpciones } from "../state/SeleccionOpciones";
 
 /**
  *  Componente principal de Ordenamiento donde se encarga de renderizar el menu de opciones y el contenido
@@ -13,6 +13,11 @@ import { SeleccionOpciones } from "../selectedSection/SeleccionOpciones";
  */
 
 export function Ordenamiento() {
+    /**
+     * Esto se llama Indexed Access Type (Valores que son validos). 
+     * El cual le proporsionamos el type que esta dentro de OrdenamientoProps.
+     * El type animacion es el valor inicial cuando se monta Ordenamiento.
+     */
     const [heroType, setHeroType] = useState<OrdenamientoProps["type"]>("animacion");
 
     return (

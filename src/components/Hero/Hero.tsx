@@ -1,6 +1,6 @@
 import { Animacion } from "../Animacion";
 import { HeroProps } from "./heroProps.types";
-import { Ordenamiento } from "../../features/ordenamiento/ordenamientoPage/OrdenamientoPage";
+import { Ordenamiento } from "../../features/ordenamiento-view/page/OrdenamientoPage";
 
 export const Hero = ({ type }: HeroProps) => {
 

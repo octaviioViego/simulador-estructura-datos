@@ -1,7 +1,7 @@
 /*
  * Tipos de datos para el componente BotonReinicio
  */
-import { opcionesSimuladorProps } from "./opcionSimulador.types";
+import { opcionesSimuladorProps } from "../container/opcionSimulador.types";
 
 export type EstadoBoton = "listo_ordenar" | "listo_reiniciar" | "ordenando";
 

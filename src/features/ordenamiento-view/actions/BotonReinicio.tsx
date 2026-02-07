@@ -1,4 +1,4 @@
-import { iconos } from "../../assets/constants/iconos";
+import { iconos } from "../../../assets/constants/iconos";
 import "./BotonReinicio.css";
 import { EstadoBoton, Props } from "./botonReinicio.types";
 
